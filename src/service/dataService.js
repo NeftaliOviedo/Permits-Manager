@@ -36,12 +36,11 @@ class DataService{
             })
             .then((willDelete) => {
             if (willDelete) {
-                this.delete(id).then(resp => {
-                swal("The Permit of "+resp.employeeName+" has been deleted!", {
+                this.delete(id).then(
+                swal("Permit has been deleted!", {
                     icon: "success",
-                    });
-                    location.reload()
-                })
+                    })
+                )
                 
             } else {
                 swal("Your file is safe!");

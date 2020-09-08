@@ -39,14 +39,12 @@ export default {
     {
       GetPemits(){
          _service.getAll().then(response => {
-          this.permits = response.data;
-
-          for(let i = 0; i < this.permits.length; i++){
-              var arr = response.data[i].fechaPermiso;
+          for(let i = 0; i < response.data.length; i++){
+              var arr = response.data[i].permitDate;
                 arr = arr.split('T',1);
-                this.permits[i].FechaPermiso = arr.toString();
-                console.log(this.permits[i].FechaPermiso);
+                response.data[i].permitDate = arr.toString();
           }
+          this.permits = response.data;
         })
         .catch(e => {
           console.log(e);
@@ -54,6 +52,9 @@ export default {
       }
     },
     beforeMount(){
+      this.GetPemits();
+    },
+    beforeUpdate(){
       this.GetPemits();
     }
   

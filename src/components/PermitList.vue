@@ -15,8 +15,8 @@
                     <th scope="row">{{permit.id}}</th>
                     <td>{{permit.employeeName}}</td>
                     <td>{{permit.employeeLastname}}</td>
-                    <td>{{permit.fechaPermiso}}</td>
                     <td>{{permit.permitType.description}}</td>
+                    <td>{{permit.permitDate}}</td>
                     <td>
                         <button type="button" class="btn btn-primary btn-sm mr-4" @click="this.$router.push(`/form/permit/Edit/${permit.id}`)">   
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -46,13 +46,6 @@ import _service from '../service/dataService'
 export default {
     name:"List",
     props:["permits"],
-    data () {
-        return {
-        }
-    },
-    mounted(){
-        
-    },
     methods:{
         deleteItem(id){
             _service.confirmDelete(id);
