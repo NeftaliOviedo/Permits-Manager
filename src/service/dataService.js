@@ -1,7 +1,7 @@
 import axios from "axios";
 import swal from 'sweetalert'
 
-var baseURL = "http://localhost:59667/api";
+var baseURL = "http://neftalilocaldb-001-site1.htempurl.com/api";
 class DataService{
     //API requests
     getAll(){
